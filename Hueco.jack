@@ -1,0 +1,32 @@
+class Hueco {
+    field int inicio;
+    field int location;
+    field int memoria;
+
+    constructor Hueco new(int posInit){
+        let location = posInit;
+        do draw(location);
+        return this;
+    }
+
+    method void dispose(){
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    // dibujar el hueco
+    method void draw(int location) {
+        var int memAddress;
+        let memAddress = 16384+location;
+        // column 0
+	do Memory.poke(memAddress, 992);
+	do Memory.poke(memAddress +32, 4088);
+	do Memory.poke(memAddress +64, 8190);
+	do Memory.poke(memAddress +96, 8191);
+	do Memory.poke(memAddress +128, 16383);
+	do Memory.poke(memAddress +160, 16382);
+	do Memory.poke(memAddress +192, 16368);
+	do Memory.poke(memAddress +224, 8064);
+	return;
+    }
+}

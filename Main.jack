@@ -1,8 +1,23 @@
 class Main{
     function void main(){
         var Carro carro;
+        var Cactus cactus;
+        var Hueco hueco;
+        var Auto_Obstaculo auto_obstaculo;
+        var Cono cono;
+        var Difunto difunto;
         let carro = Carro.new(1);
+        let cactus = Cactus.new(1000);
+        let hueco = Hueco.new(2000);
+        let auto_obstaculo = Auto_Obstaculo.new(2500);
+        let cono = Cono.new(3000);
+        let difunto = Difunto.new(3500);
         do carro.dispose();
+        do cactus.dispose();
+        do hueco.dispose();
+        do auto_obstaculo.dispose();
+        do cono.dispose();
+        do difunto.dispose();
         return;
     }
 }

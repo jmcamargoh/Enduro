@@ -1,0 +1,61 @@
+class Auto_Obstaculo {
+    field int inicio;
+    field int location;
+    field int memoria;
+
+    constructor Auto_Obstaculo new(int posInit){
+        let location = posInit;
+        do draw(location);
+        return this;
+    }
+
+    method void dispose(){
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    // dibujar el auto obstaculo
+    method void draw(int location) {
+        var int memAddress;
+        let memAddress = 16384+location;
+        // column 0
+	do Memory.poke(memAddress, 480);
+	do Memory.poke(memAddress +32, -2);
+	do Memory.poke(memAddress +64, 1055);
+	do Memory.poke(memAddress +96, 3135);
+	do Memory.poke(memAddress +128, -9);
+	do Memory.poke(memAddress +160, -25);
+	do Memory.poke(memAddress +192, -25);
+	do Memory.poke(memAddress +224, -25);
+	do Memory.poke(memAddress +256, -25);
+	do Memory.poke(memAddress +288, -25);
+	do Memory.poke(memAddress +320, -9);
+	do Memory.poke(memAddress +352, 3135);
+	do Memory.poke(memAddress +384, 1055);
+	do Memory.poke(memAddress +416, -2);
+	do Memory.poke(memAddress +448, 480);
+	// column 1
+	do Memory.poke(memAddress +1, 30);
+	do Memory.poke(memAddress +33, 1023);
+	do Memory.poke(memAddress +65, 2046);
+	do Memory.poke(memAddress +97, 4035);
+	do Memory.poke(memAddress +129, 4033);
+	do Memory.poke(memAddress +161, 4033);
+	do Memory.poke(memAddress +193, 4033);
+	do Memory.poke(memAddress +225, 4033);
+	do Memory.poke(memAddress +257, 4033);
+	do Memory.poke(memAddress +289, 29633);
+	do Memory.poke(memAddress +321, -1087);
+	do Memory.poke(memAddress +353, -1597);
+	do Memory.poke(memAddress +385, -514);
+	do Memory.poke(memAddress +417, -513);
+	do Memory.poke(memAddress +449, -482);
+	do Memory.poke(memAddress +481, -512);
+	do Memory.poke(memAddress +513, 15360);
+	// column 2
+	do Memory.poke(memAddress +354, 1);
+	do Memory.poke(memAddress +386, 1);
+	do Memory.poke(memAddress +418, 1);
+	return;
+    }
+}

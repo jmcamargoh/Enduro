@@ -1,0 +1,75 @@
+function Hueco.new 0
+push constant 3
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop this 1
+push pointer 0
+push this 1
+call Hueco.draw 2
+pop temp 0
+push pointer 0
+return
+function Hueco.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Hueco.draw 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 992
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 4088
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 8190
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 8191
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 16383
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 16382
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 16368
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 8064
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
