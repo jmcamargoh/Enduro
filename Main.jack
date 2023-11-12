@@ -1,0 +1,8 @@
+class Main{
+    function void main(){
+        var Carro carro;
+        let carro = Carro.new(1);
+        do carro.dispose();
+        return;
+    }
+}

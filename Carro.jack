@@ -1,0 +1,50 @@
+class Carro {
+    field int inicio;
+    field int location;
+    field int memoria;
+
+    constructor Carro new(int posInit){
+        let location = posInit;
+        do draw(location);
+        return this;
+    }
+
+    method void dispose(){
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    // dibujar el carro
+    method void draw(int location){
+        var int memAddress;
+        let memAddress = 16384+location;
+        // column 0
+        do Memory.poke(memAddress +128, 896);
+        do Memory.poke(memAddress, 0);
+        do Memory.poke(memAddress +32, 0);
+        do Memory.poke(memAddress +64, 0);
+        do Memory.poke(memAddress +96, 0);
+        do Memory.poke(memAddress +160, 7102);
+        do Memory.poke(memAddress +192, 12671);
+        do Memory.poke(memAddress +224, 16383);
+        do Memory.poke(memAddress +256, 16383);
+        do Memory.poke(memAddress +288, 12671);
+        do Memory.poke(memAddress +320, 7102);
+        do Memory.poke(memAddress +352, 896);
+        // column 1
+        // column -1
+        do Memory.poke(memAddress +127, -8192);
+        do Memory.poke(memAddress -1, 0);
+        do Memory.poke(memAddress +31, 0);
+        do Memory.poke(memAddress +63, 0);
+        do Memory.poke(memAddress +95, 0);
+        do Memory.poke(memAddress +159, -8192);
+        do Memory.poke(memAddress +191, 20480);
+        do Memory.poke(memAddress +223, -4096);
+        do Memory.poke(memAddress +255, -4096);
+        do Memory.poke(memAddress +287, 20480);
+        do Memory.poke(memAddress +319, -8192);
+        do Memory.poke(memAddress +351, -8192);
+        return;
+    }
+}

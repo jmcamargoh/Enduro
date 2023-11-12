@@ -1,0 +1,177 @@
+function Carro.new 0
+push constant 3
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop this 1
+push pointer 0
+push this 1
+call Carro.draw 2
+pop temp 0
+push pointer 0
+return
+function Carro.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Carro.draw 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 128
+add
+push constant 896
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 7102
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 12671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 16383
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 16383
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 12671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 7102
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 896
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 127
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 1
+sub
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 31
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 63
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 95
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 159
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 191
+add
+push constant 20480
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 223
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 255
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 287
+add
+push constant 20480
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 319
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 351
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
