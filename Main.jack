@@ -1,56 +1,243 @@
-class Main{
-    function void main(){
-        var Carro carro;
-        var Cactus cactus;
-        var Hueco hueco;
-        var Auto_Obstaculo auto_obstaculo;
-        var Cono cono;
-        var Difunto difunto;
-        let carro = Carro.new(1);
-        let cactus = Cactus.new(1000);
-        let hueco = Hueco.new(2000);
-        let auto_obstaculo = Auto_Obstaculo.new(2500);
-        let cono = Cono.new(3000);
-        let difunto = Difunto.new(3500);
-        do carro.dispose();
-        do cactus.dispose();
-        do hueco.dispose();
-        do auto_obstaculo.dispose();
-        do cono.dispose();
-        do difunto.dispose();
+class Main { 
+    function void main() {
+        var int i;
+        var int tamaño;
+        var Player player;
+        var Obstacle cone0;
+        var Obstacle cone1;
+        var Obstacle cone2;
+        var Obstacle cone3;
+        var Obstacle cone4;
+        var Obstacle cone5;
+        var int score; //determinamos cuantos conos habrá en la pantalla al mismo tiempo.
+        var int contadorScore;  //
+        var int orderCone; //Se usará para indicar el orden en que saldrán los conos.
+        var boolean salir;
+        var int seed;
+        var char key;
+        var boolean showMenu;
+        var boolean Gameover;
+        var int auxiliar;
+        var Array positions1;
+        var Arrayint puntaje;
+        var int contador;
+        var int carril;
+        var int carril1;
+        let puntaje = Array.new(5);
+        let puntaje[0] = 0;
+        let puntaje[1] = 0;
+        let puntaje[2] = 0;
+        let puntaje[3] = 0;
+        let puntaje[4] = 0;
+        while(true){
+            let contadorScore = 0;
+            let i = 0;
+            let tamaño = 5;
+            do Screen.clearScreen();
+            let salir = false;
+            
+            let player = Player.new(3, 104);
+            let seed = seed + 1;
+            let carril = Utils.createCarril(seed);
+            let cone0 =  Obstacle.new(carril);
+            let carril1 = carril;
+            let cone1 = Obstacle.new(carril);
+            let cone2 = Obstacle.new(0);
+            let cone3 = Obstacle.new(0);
+            let cone4 = Obstacle.new(0);
+            let cone5 = Obstacle.new(0);
+            do Screen.clearScreen();
+            do player.draw();
+            do cone0.draw();
 
-        // Pista
-        do Screen.drawLine(0,49,511,49);
-        do Screen.drawLine(0,50,511,50);
-        do Screen.drawLine(0,205,511,205);
-        do Screen.drawLine(0,206,511,206);
-        
+            while(~salir){
+                //do Sys.wait(5);
 
-        //Carril 1
-        do Screen.drawLine(0,102,25,102);
-        do Screen.drawLine(50,102,75,102);
-        do Screen.drawLine(100,102,125,102);
-        do Screen.drawLine(150,102,175,102);
-        do Screen.drawLine(200,102,225,102);
-        do Screen.drawLine(250,102,275,102);
-        do Screen.drawLine(300,102,325,102);
-        do Screen.drawLine(350,102,375,102);
-        do Screen.drawLine(400,102,425,102);
-        do Screen.drawLine(450,102,475,102);
-        do Screen.drawLine(500,102,511,102);
-
-        //Carril 2
-        do Screen.drawLine(0,154,25,154);
-        do Screen.drawLine(50,154,75,154);
-        do Screen.drawLine(100,154,125,154);
-        do Screen.drawLine(150,154,175,154);
-        do Screen.drawLine(200,154,225,154);
-        do Screen.drawLine(250,154,275,154);
-        do Screen.drawLine(300,154,325,154);
-        do Screen.drawLine(350,154,375,154);
-        do Screen.drawLine(400,154,425,154);
-        do Screen.drawLine(450,154,475,154);
-        do Screen.drawLine(500,154,511,154);
+                while(key=0){
+                    let seed = seed + 1;
+                    let score = score+1;
+                    let key = Keyboard.keyPressed();
+                    if(auxiliar = 50){
+                        if(contadorScore>1 & contadorScore<19){
+                            do cone0.setSeed(score);
+                            let carril = Utils.createCarril(seed);
+                            if(carril=carril1){
+                                let seed = seed + 1;
+                                let carril = Utils.createCarril(seed);
+                            }
+                            let carril1 = carril;
+                            do cone0.moveLeft(carril);
+                        }
+                        if(contadorScore>20 ){
+                            do cone0.setSeed(score);
+                            let carril = Utils.createCarril(seed);
+                            if(carril=carril1){
+                                let seed = seed + 1;
+                                let carril = Utils.createCarril(seed);
+                            }
+                            let carril1 = carril;
+                            do cone0.moveLeft(carril);
+                            do cone1.setSeed(score);
+                            let carril = Utils.createCarril(seed);
+                            if(carril=carril1){
+                                let seed = seed + 1;
+                                let carril = Utils.createCarril(seed);
+                            }
+                            let carril1 = carril;
+                            do cone1.moveLeft(carril);
+                        }
+                        let score = score+1;
+                        if(score>100){
+                            let contadorScore = contadorScore +1;
+                            let score = 0;
+                        }
+                        do Output.moveCursor(0,0);
+                        do Output.printInt(contadorScore);
+                        let auxiliar=0;
+                    }
+                    if ((cone0.hitbox(player.x(), player.y()) = 2) | (cone1.hitbox(player.x(), player.y()) = 2)) {
+                        //do Output.printString("Game Over");
+                        let salir = true;
+                        let key = 1;
+                    }
+                    let auxiliar = auxiliar + 1;
+                    let seed = seed + 1;
+                    //do Sys.wait(5);
+                }
+                if ((cone0.hitbox(player.x(), player.y()) = 2) | (cone1.hitbox(player.x(), player.y()) = 2)) {
+                        let salir = true;
+                }
+                let key = Keyboard.keyPressed();
+                if (key = 131){do player.moveUp(); }//flecha arriba
+                if (key = 133){do player.moveDown();}//flecha abajo
+                if (key = 81){ let salir=true;} //tecla Q
+                
+                let score = score+1;
+                let key = Keyboard.keyPressed();
+                    if(auxiliar = 50){
+                        if(contadorScore>1 & contadorScore<19){
+                            do cone0.setSeed(score);
+                            let carril = Utils.createCarril(seed);
+                            if(carril=carril1){
+                                let seed = seed + 1;
+                                let carril = Utils.createCarril(seed);
+                            }
+                            let carril1 = carril;
+                            do cone0.moveLeft(carril);
+                        }
+                        if(contadorScore>20){
+                            do cone0.setSeed(score);
+                            let carril = Utils.createCarril(seed);
+                            if(carril=carril1){
+                                let seed = seed + 1;
+                                let carril = Utils.createCarril(seed);
+                            }
+                            let carril1 = carril;
+                            do cone0.moveLeft(carril);
+                            do cone1.setSeed(score);
+                            let carril = Utils.createCarril(seed);
+                            if(carril=carril1){
+                                let seed = seed + 1;
+                                let carril = Utils.createCarril(seed);
+                            }
+                            let carril1 = carril;
+                            do cone1.moveLeft(carril);
+                        }
+                        let score = score+1;
+                        if(score>100){
+                            let contadorScore = contadorScore +1;
+                            let score = 0;
+                        }
+                        do Output.moveCursor(0,0);
+                        do Output.printInt(contadorScore);
+                        let auxiliar=0;
+                    }
+                    let auxiliar = auxiliar + 1;
+                
+                while(~(key=0)){
+                    let seed = seed + 1;
+                    let score = score+1;
+                    let key = Keyboard.keyPressed();
+                    if(auxiliar = 50){
+                        if(contadorScore>1 & contadorScore<19){
+                            do cone0.setSeed(score);
+                            let carril = Utils.createCarril(seed);
+                            if(carril=carril1){
+                                let seed = seed + 1;
+                                let carril = Utils.createCarril(seed);
+                            }
+                            let carril1 = carril;
+                            do cone0.moveLeft(carril);
+                        }
+                        if(contadorScore>20 ){
+                            do cone0.setSeed(score);
+                            let carril = Utils.createCarril(seed);
+                            if(carril=carril1){
+                                let seed = seed + 1;
+                                let carril = Utils.createCarril(seed);
+                            }
+                            let carril1 = carril;
+                            do cone0.moveLeft(carril);
+                            do cone1.setSeed(score);
+                            let carril = Utils.createCarril(seed);
+                            if(carril=carril1){
+                                let seed = seed + 1;
+                                let carril = Utils.createCarril(seed);
+                            }
+                            let carril1 = carril;
+                            do cone1.moveLeft(carril);
+                        }
+                        let score = score+1;
+                        if(score>100){
+                            let contadorScore = contadorScore +1;
+                            let score = 0;
+                        }
+                        do Output.moveCursor(0,0);
+                        do Output.printInt(contadorScore);
+                        let auxiliar=0;
+                    }
+                    if ((cone0.hitbox(player.x(), player.y()) = 2) | (cone1.hitbox(player.x(), player.y()) = 2)) {
+                        let salir = true;
+                    }
+                    let auxiliar = auxiliar + 1;
+                    let seed = seed + 1;
+                    //do Sys.wait(3);
+                }
+            }
+            do Sys.wait(500);
+            do Screen.clearScreen();
+            let Gameover = true;
+            do Utils.tpuntaje(puntaje,contadorScore);
+            let contadorScore = 0;
+            do Output.moveCursor(0,0);
+            do Output.printString("Puntajes mas altos:");
+            do Output.moveCursor(1,0);
+            do Output.printInt(puntaje[0]);
+            do Output.moveCursor(2,0);
+            do Output.printInt(puntaje[1]);
+            do Output.moveCursor(3,0);
+            do Output.printInt(puntaje[2]);
+            do Output.moveCursor(4,0);
+            do Output.printInt(puntaje[3]);
+            do Output.moveCursor(5,0);
+            do Output.printInt(puntaje[4]);
+            
+            do Output.moveCursor(12,15);
+            do Output.printString("Presione espacio para volver a jugar");
+            while(Gameover){
+                while(key=0){
+                    let key = Keyboard.keyPressed();
+                    do GameOver.showGameover(2028);
+                }
+                if(key = 32){let Gameover=false;}
+                
+                while(~(key=0)){
+                    let key = Keyboard.keyPressed();
+                    do GameOver.showGameover(2028);
+                } 
+            }
+            
+        }
         return;
-    }
+    } 
 }

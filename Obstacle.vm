@@ -1,0 +1,760 @@
+function Obstacle.new 0
+push constant 7
+call Memory.alloc 1
+pop pointer 0
+push constant 1
+pop this 3
+push constant 0
+not
+pop this 4
+push constant 0
+not
+pop this 6
+push argument 0
+pop this 2
+push constant 29
+pop this 0
+push this 2
+push constant 0
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 5
+pop this 1
+label IF_FALSE0
+push this 2
+push constant 1
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 104
+pop this 1
+label IF_FALSE1
+push this 2
+push constant 2
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 208
+pop this 1
+label IF_FALSE2
+push pointer 0
+return
+function Obstacle.x 0
+push argument 0
+pop pointer 0
+push this 0
+return
+function Obstacle.y 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function Obstacle.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Obstacle.hitbox 4
+push argument 0
+pop pointer 0
+push argument 1
+push constant 2
+add
+pop local 0
+push argument 1
+push constant 2
+add
+pop local 1
+push argument 2
+pop local 2
+push argument 2
+push constant 30
+add
+pop local 3
+push local 0
+push this 0
+push constant 1
+sub
+lt
+push local 0
+push this 0
+push constant 1
+sub
+eq
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+push constant 1
+sub
+push local 1
+lt
+push this 0
+push constant 1
+sub
+push local 1
+eq
+or
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 2
+push this 1
+lt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 1
+push local 3
+lt
+push this 1
+push local 3
+eq
+or
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 18
+push constant 10
+call Output.moveCursor 2
+pop temp 0
+push constant 1
+call String.new 1
+push constant 49
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 2
+return
+label IF_FALSE3
+label IF_FALSE2
+push local 2
+push this 1
+push constant 45
+add
+lt
+push local 2
+push this 1
+push constant 45
+add
+eq
+or
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push this 1
+push constant 45
+add
+push local 3
+lt
+push this 1
+push constant 45
+add
+push local 3
+eq
+or
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 18
+push constant 10
+call Output.moveCursor 2
+pop temp 0
+push constant 1
+call String.new 1
+push constant 50
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 2
+return
+label IF_FALSE5
+label IF_FALSE4
+label IF_FALSE1
+label IF_FALSE0
+push local 0
+push this 0
+push constant 2
+add
+lt
+push local 0
+push this 0
+push constant 2
+add
+eq
+or
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 0
+push constant 2
+add
+push local 1
+lt
+push this 0
+push constant 2
+add
+push local 1
+eq
+or
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push local 2
+push this 1
+lt
+push local 2
+push this 1
+eq
+or
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push this 1
+push local 3
+lt
+push this 1
+push local 3
+eq
+or
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push constant 18
+push constant 10
+call Output.moveCursor 2
+pop temp 0
+push constant 1
+call String.new 1
+push constant 51
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 2
+return
+label IF_FALSE9
+label IF_FALSE8
+push local 2
+push this 1
+push constant 45
+add
+lt
+push local 2
+push this 1
+push constant 45
+add
+eq
+or
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push this 1
+push constant 45
+add
+push local 3
+lt
+push this 1
+push constant 45
+add
+push local 3
+lt
+or
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push constant 18
+push constant 10
+call Output.moveCursor 2
+pop temp 0
+push constant 1
+call String.new 1
+push constant 52
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 2
+return
+label IF_FALSE11
+label IF_FALSE10
+label IF_FALSE7
+label IF_FALSE6
+push constant 1
+return
+function Obstacle.draw 1
+push argument 0
+pop pointer 0
+push constant 16384
+push this 0
+push this 1
+push constant 32
+call Math.multiply 2
+add
+add
+pop local 0
+push local 0
+push constant 32
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 32
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 4
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 2
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 2
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 2
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 2
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 8
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 16
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 1
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 33
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 65
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 97
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 129
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 161
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 193
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 225
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 257
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 289
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 321
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 353
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 385
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.setSeed 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 5
+push constant 0
+return
+function Obstacle.getSeed 0
+push argument 0
+pop pointer 0
+push this 5
+return
+function Obstacle.update 0
+push argument 0
+pop pointer 0
+push constant 1
+pop this 3
+push constant 0
+not
+pop this 4
+push constant 0
+not
+pop this 6
+push argument 1
+pop this 2
+push constant 29
+pop this 0
+push this 2
+push constant 0
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 5
+pop this 1
+label IF_FALSE0
+push this 2
+push constant 1
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 104
+pop this 1
+label IF_FALSE1
+push this 2
+push constant 2
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 208
+pop this 1
+label IF_FALSE2
+push constant 0
+return
+function Obstacle.erase 1
+push argument 0
+pop pointer 0
+push constant 16384
+push this 0
+push this 1
+push constant 32
+call Math.multiply 2
+add
+add
+pop local 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 1
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 33
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 65
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 97
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 129
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 161
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 193
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 225
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 257
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 289
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 321
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 353
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 385
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.moveLeft 0
+push argument 0
+pop pointer 0
+push this 0
+push constant 0
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+call Obstacle.erase 1
+pop temp 0
+push this 0
+push constant 1
+sub
+pop this 0
+push pointer 0
+call Obstacle.draw 1
+pop temp 0
+push constant 0
+return
+label IF_FALSE0
+push pointer 0
+call Obstacle.erase 1
+pop temp 0
+push pointer 0
+push argument 1
+call Obstacle.update 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draws 0
+push argument 0
+pop pointer 0
+push this 3
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+push this 1
+call Animacion_cono.cono1 2
+pop temp 0
+label IF_FALSE0
+push constant 0
+return
+function Obstacle.deletes 0
+push argument 0
+pop pointer 0
+push this 3
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+push this 1
+call Animacion_cono.deletecono1 2
+pop temp 0
+label IF_FALSE0
+push constant 0
+return
