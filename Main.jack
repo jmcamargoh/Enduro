@@ -9,8 +9,8 @@ class Main {
         var Obstacle Hueco3;
         var Obstacle Hueco4;
         var Obstacle Hueco5;
-        var int score; //determinamos cuantos conos habrá en la pantalla al mismo tiempo.
-        var int contadorScore;  //
+        var int score;
+        var int contadorScore;
         var boolean salir;
         var int seed;
         var char key;
@@ -18,16 +18,9 @@ class Main {
         var boolean Gameover;
         var int auxiliar;
         var Array positions1;
-        var Arrayint puntaje;
         var int contador;
         var int carril;
         var int carril1;
-        let puntaje = Array.new(5);
-        let puntaje[0] = 0;
-        let puntaje[1] = 0;
-        let puntaje[2] = 0;
-        let puntaje[3] = 0;
-        let puntaje[4] = 0;
         while(true){
             let contadorScore = 0;
             let i = 0;
