@@ -1,4 +1,4 @@
-function Main.main 21
+function Main.main 20
 label WHILE_EXP0
 push constant 0
 not
@@ -24,13 +24,13 @@ add
 pop local 12
 push local 12
 call Extras.createCarril 1
-pop local 19
-push local 19
+pop local 18
+push local 18
 call Obstacle.new 1
 pop local 3
-push local 19
-pop local 20
-push local 19
+push local 18
+pop local 19
+push local 18
 call Obstacle.new 1
 pop local 4
 push constant 0
@@ -74,7 +74,7 @@ add
 pop local 9
 call Keyboard.keyPressed 0
 pop local 13
-push local 16
+push local 15
 push constant 50
 eq
 if-goto IF_TRUE0
@@ -96,9 +96,9 @@ call Obstacle.setSeed 2
 pop temp 0
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
+push local 18
 push local 19
-push local 20
 eq
 if-goto IF_TRUE2
 goto IF_FALSE2
@@ -109,12 +109,12 @@ add
 pop local 12
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
 label IF_FALSE2
-push local 19
-pop local 20
+push local 18
+pop local 19
 push local 3
-push local 19
+push local 18
 call Obstacle.moveLeft 2
 pop temp 0
 label IF_FALSE1
@@ -130,9 +130,9 @@ call Obstacle.setSeed 2
 pop temp 0
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
+push local 18
 push local 19
-push local 20
 eq
 if-goto IF_TRUE4
 goto IF_FALSE4
@@ -143,12 +143,12 @@ add
 pop local 12
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
 label IF_FALSE4
-push local 19
-pop local 20
+push local 18
+pop local 19
 push local 3
-push local 19
+push local 18
 call Obstacle.moveLeft 2
 pop temp 0
 push local 4
@@ -157,9 +157,9 @@ call Obstacle.setSeed 2
 pop temp 0
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
+push local 18
 push local 19
-push local 20
 eq
 if-goto IF_TRUE5
 goto IF_FALSE5
@@ -170,12 +170,12 @@ add
 pop local 12
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
 label IF_FALSE5
-push local 19
-pop local 20
+push local 18
+pop local 19
 push local 4
-push local 19
+push local 18
 call Obstacle.moveLeft 2
 pop temp 0
 label IF_FALSE3
@@ -201,7 +201,7 @@ push constant 0
 call Output.moveCursor 2
 pop temp 0
 push constant 0
-pop local 16
+pop local 15
 label IF_FALSE0
 push local 3
 push local 2
@@ -229,10 +229,10 @@ pop local 11
 push constant 1
 pop local 13
 label IF_FALSE7
-push local 16
+push local 15
 push constant 1
 add
-pop local 16
+pop local 15
 push local 12
 push constant 1
 add
@@ -301,7 +301,7 @@ add
 pop local 9
 call Keyboard.keyPressed 0
 pop local 13
-push local 16
+push local 15
 push constant 50
 eq
 if-goto IF_TRUE12
@@ -323,9 +323,9 @@ call Obstacle.setSeed 2
 pop temp 0
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
+push local 18
 push local 19
-push local 20
 eq
 if-goto IF_TRUE14
 goto IF_FALSE14
@@ -336,12 +336,12 @@ add
 pop local 12
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
 label IF_FALSE14
-push local 19
-pop local 20
+push local 18
+pop local 19
 push local 3
-push local 19
+push local 18
 call Obstacle.moveLeft 2
 pop temp 0
 label IF_FALSE13
@@ -357,9 +357,9 @@ call Obstacle.setSeed 2
 pop temp 0
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
+push local 18
 push local 19
-push local 20
 eq
 if-goto IF_TRUE16
 goto IF_FALSE16
@@ -370,12 +370,12 @@ add
 pop local 12
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
 label IF_FALSE16
-push local 19
-pop local 20
+push local 18
+pop local 19
 push local 3
-push local 19
+push local 18
 call Obstacle.moveLeft 2
 pop temp 0
 push local 4
@@ -384,9 +384,9 @@ call Obstacle.setSeed 2
 pop temp 0
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
+push local 18
 push local 19
-push local 20
 eq
 if-goto IF_TRUE17
 goto IF_FALSE17
@@ -397,12 +397,12 @@ add
 pop local 12
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
 label IF_FALSE17
-push local 19
-pop local 20
+push local 18
+pop local 19
 push local 4
-push local 19
+push local 18
 call Obstacle.moveLeft 2
 pop temp 0
 label IF_FALSE15
@@ -428,12 +428,12 @@ push constant 0
 call Output.moveCursor 2
 pop temp 0
 push constant 0
-pop local 16
+pop local 15
 label IF_FALSE12
-push local 16
+push local 15
 push constant 1
 add
-pop local 16
+pop local 15
 label WHILE_EXP3
 push local 13
 push constant 0
@@ -451,7 +451,7 @@ add
 pop local 9
 call Keyboard.keyPressed 0
 pop local 13
-push local 16
+push local 15
 push constant 50
 eq
 if-goto IF_TRUE19
@@ -473,9 +473,9 @@ call Obstacle.setSeed 2
 pop temp 0
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
+push local 18
 push local 19
-push local 20
 eq
 if-goto IF_TRUE21
 goto IF_FALSE21
@@ -486,12 +486,12 @@ add
 pop local 12
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
 label IF_FALSE21
-push local 19
-pop local 20
+push local 18
+pop local 19
 push local 3
-push local 19
+push local 18
 call Obstacle.moveLeft 2
 pop temp 0
 label IF_FALSE20
@@ -507,9 +507,9 @@ call Obstacle.setSeed 2
 pop temp 0
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
+push local 18
 push local 19
-push local 20
 eq
 if-goto IF_TRUE23
 goto IF_FALSE23
@@ -520,12 +520,12 @@ add
 pop local 12
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
 label IF_FALSE23
-push local 19
-pop local 20
+push local 18
+pop local 19
 push local 3
-push local 19
+push local 18
 call Obstacle.moveLeft 2
 pop temp 0
 push local 4
@@ -534,9 +534,9 @@ call Obstacle.setSeed 2
 pop temp 0
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
+push local 18
 push local 19
-push local 20
 eq
 if-goto IF_TRUE24
 goto IF_FALSE24
@@ -547,12 +547,12 @@ add
 pop local 12
 push local 12
 call Extras.createCarril 1
-pop local 19
+pop local 18
 label IF_FALSE24
-push local 19
-pop local 20
+push local 18
+pop local 19
 push local 4
-push local 19
+push local 18
 call Obstacle.moveLeft 2
 pop temp 0
 label IF_FALSE22
@@ -578,7 +578,7 @@ push constant 0
 call Output.moveCursor 2
 pop temp 0
 push constant 0
-pop local 16
+pop local 15
 label IF_FALSE19
 push local 3
 push local 2
@@ -604,10 +604,10 @@ push constant 0
 not
 pop local 11
 label IF_FALSE26
-push local 16
+push local 15
 push constant 1
 add
-pop local 16
+pop local 15
 push local 12
 push constant 1
 add
@@ -623,7 +623,7 @@ call Screen.clearScreen 0
 pop temp 0
 push constant 0
 not
-pop local 15
+pop local 14
 push constant 0
 pop local 10
 push constant 12
@@ -679,7 +679,7 @@ call String.appendChar 2
 call Output.printString 1
 pop temp 0
 label WHILE_EXP4
-push local 15
+push local 14
 not
 if-goto WHILE_END4
 label WHILE_EXP5
@@ -702,7 +702,7 @@ if-goto IF_TRUE27
 goto IF_FALSE27
 label IF_TRUE27
 push constant 0
-pop local 15
+pop local 14
 label IF_FALSE27
 label WHILE_EXP6
 push local 13

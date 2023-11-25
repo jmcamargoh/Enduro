@@ -14,7 +14,6 @@ class Main {
         var boolean salir;
         var int seed;
         var char key;
-        var boolean showMenu;
         var boolean Gameover;
         var int auxiliar;
         var Array positions1;
