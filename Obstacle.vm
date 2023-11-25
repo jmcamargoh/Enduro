@@ -66,7 +66,7 @@ push argument 0
 pop pointer 0
 push argument 1
 push constant 2
-add
+sub
 pop local 0
 push argument 1
 push constant 2
@@ -75,7 +75,7 @@ pop local 1
 push argument 2
 pop local 2
 push argument 2
-push constant 30
+push constant 4
 add
 pop local 3
 push local 0
@@ -126,12 +126,6 @@ push constant 18
 push constant 10
 call Output.moveCursor 2
 pop temp 0
-push constant 1
-call String.new 1
-push constant 49
-call String.appendChar 2
-call Output.printString 1
-pop temp 0
 push constant 2
 return
 label IF_FALSE3
@@ -167,12 +161,6 @@ label IF_TRUE5
 push constant 18
 push constant 10
 call Output.moveCursor 2
-pop temp 0
-push constant 1
-call String.new 1
-push constant 50
-call String.appendChar 2
-call Output.printString 1
 pop temp 0
 push constant 2
 return
@@ -232,12 +220,6 @@ push constant 18
 push constant 10
 call Output.moveCursor 2
 pop temp 0
-push constant 1
-call String.new 1
-push constant 51
-call String.appendChar 2
-call Output.printString 1
-pop temp 0
 push constant 2
 return
 label IF_FALSE9
@@ -273,12 +255,6 @@ label IF_TRUE11
 push constant 18
 push constant 10
 call Output.moveCursor 2
-pop temp 0
-push constant 1
-call String.new 1
-push constant 52
-call String.appendChar 2
-call Output.printString 1
 pop temp 0
 push constant 2
 return
@@ -724,37 +700,5 @@ push pointer 0
 push argument 1
 call Obstacle.update 2
 pop temp 0
-push constant 0
-return
-function Obstacle.draws 0
-push argument 0
-pop pointer 0
-push this 3
-push constant 1
-eq
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push this 0
-push this 1
-call Animacion_cono.cono1 2
-pop temp 0
-label IF_FALSE0
-push constant 0
-return
-function Obstacle.deletes 0
-push argument 0
-pop pointer 0
-push this 3
-push constant 1
-eq
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push this 0
-push this 1
-call Animacion_cono.deletecono1 2
-pop temp 0
-label IF_FALSE0
 push constant 0
 return

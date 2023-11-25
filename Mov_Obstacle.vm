@@ -1,4 +1,4 @@
-function Animacion_cono.conoEntero 1
+function Mov_Obstacle.huecoentero 1
 push constant 16384
 push argument 0
 push argument 1
@@ -723,7 +723,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono1 1
+function Mov_Obstacle.hueco1 1
 push constant 16384
 push argument 0
 push argument 1
@@ -1402,7 +1402,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono2 1
+function Mov_Obstacle.hueco2 1
 push constant 16384
 push argument 0
 push argument 1
@@ -2101,7 +2101,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono3 1
+function Mov_Obstacle.hueco3 1
 push constant 16384
 push argument 0
 push argument 1
@@ -2816,7 +2816,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono4 1
+function Mov_Obstacle.hueco4 1
 push constant 16384
 push argument 0
 push argument 1
@@ -3391,7 +3391,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono5 1
+function Mov_Obstacle.hueco5 1
 push constant 16384
 push argument 0
 push argument 1
@@ -3880,7 +3880,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono6 1
+function Mov_Obstacle.hueco6 1
 push constant 16384
 push argument 0
 push argument 1
@@ -4483,7 +4483,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono7 1
+function Mov_Obstacle.hueco7 1
 push constant 16384
 push argument 0
 push argument 1
@@ -5090,7 +5090,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono8 1
+function Mov_Obstacle.hueco8 1
 push constant 16384
 push argument 0
 push argument 1
@@ -5569,7 +5569,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono9 1
+function Mov_Obstacle.hueco9 1
 push constant 16384
 push argument 0
 push argument 1
@@ -6058,7 +6058,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono10 1
+function Mov_Obstacle.hueco10 1
 push constant 16384
 push argument 0
 push argument 1
@@ -6481,7 +6481,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono11 1
+function Mov_Obstacle.hueco11 1
 push constant 16384
 push argument 0
 push argument 1
@@ -6862,7 +6862,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono12 1
+function Mov_Obstacle.hueco12 1
 push constant 16384
 push argument 0
 push argument 1
@@ -7089,7 +7089,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono13 1
+function Mov_Obstacle.hueco13 1
 push constant 16384
 push argument 0
 push argument 1
@@ -7268,7 +7268,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono14 1
+function Mov_Obstacle.hueco14 1
 push constant 16384
 push argument 0
 push argument 1
@@ -7523,7 +7523,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono15 1
+function Mov_Obstacle.hueco15 1
 push constant 16384
 push argument 0
 push argument 1
@@ -7736,7 +7736,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono16 1
+function Mov_Obstacle.hueco16 1
 push constant 16384
 push argument 0
 push argument 1
@@ -7855,7 +7855,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.cono17 1
+function Mov_Obstacle.hueco17 1
 push constant 16384
 push argument 0
 push argument 1
@@ -7926,7 +7926,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono1 1
+function Mov_Obstacle.deletehueco1 1
 push constant 16384
 push argument 0
 push argument 1
@@ -8567,7 +8567,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono2 1
+function Mov_Obstacle.deletehueco2 1
 push constant 16384
 push argument 0
 push argument 1
@@ -9226,7 +9226,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono3 1
+function Mov_Obstacle.deletehueco3 1
 push constant 16384
 push argument 0
 push argument 1
@@ -9909,7 +9909,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono4 1
+function Mov_Obstacle.deletehueco4 1
 push constant 16384
 push argument 0
 push argument 1
@@ -10460,7 +10460,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono5 1
+function Mov_Obstacle.deletehueco5 1
 push constant 16384
 push argument 0
 push argument 1
@@ -10927,7 +10927,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono6 1
+function Mov_Obstacle.deletehueco6 1
 push constant 16384
 push argument 0
 push argument 1
@@ -11490,7 +11490,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono7 1
+function Mov_Obstacle.deletehueco7 1
 push constant 16384
 push argument 0
 push argument 1
@@ -12065,7 +12065,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono8 1
+function Mov_Obstacle.deletehueco8 1
 push constant 16384
 push argument 0
 push argument 1
@@ -12520,7 +12520,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono9 1
+function Mov_Obstacle.deletehueco9 1
 push constant 16384
 push argument 0
 push argument 1
@@ -12987,7 +12987,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono10 1
+function Mov_Obstacle.deletehueco10 1
 push constant 16384
 push argument 0
 push argument 1
@@ -13394,7 +13394,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono11 1
+function Mov_Obstacle.deletehueco11 1
 push constant 16384
 push argument 0
 push argument 1
@@ -13765,7 +13765,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono12 1
+function Mov_Obstacle.deletehueco12 1
 push constant 16384
 push argument 0
 push argument 1
@@ -13992,7 +13992,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono13 1
+function Mov_Obstacle.deletehueco13 1
 push constant 16384
 push argument 0
 push argument 1
@@ -14171,7 +14171,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono14 1
+function Mov_Obstacle.deletehueco14 1
 push constant 16384
 push argument 0
 push argument 1
@@ -14410,7 +14410,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono15 1
+function Mov_Obstacle.deletehueco15 1
 push constant 16384
 push argument 0
 push argument 1
@@ -14613,7 +14613,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono16 1
+function Mov_Obstacle.deletehueco16 1
 push constant 16384
 push argument 0
 push argument 1
@@ -14732,7 +14732,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono17 1
+function Mov_Obstacle.deletehueco17 1
 push constant 16384
 push argument 0
 push argument 1
@@ -14803,7 +14803,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Animacion_cono.deletecono18 1
+function Mov_Obstacle.deletehueco18 1
 push constant 16384
 push argument 0
 push argument 1

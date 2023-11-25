@@ -5,11 +5,11 @@ class Obstacle{
     field int stepAnimation;
     field boolean draw;
     field int seed;
-    field boolean newCone;
+    field boolean newHueco;
     constructor Obstacle new(int carrilRandom){
         let stepAnimation=1;
         let draw= true;
-        let newCone = true;
+        let newHueco = true;
         let carril = carrilRandom;
         let x = 29;
         if(carril = 0){  //
@@ -36,87 +36,50 @@ class Obstacle{
         return;
     }
 
-    method boolean hitbox(int playerX, int playerY) {
-        var int playerXleft;
-        var int playerXright;
-        var int playerYtop;
-        var int playerYbottom;
-        let playerXleft = playerX + 2;
-        let playerXright = playerX + 2;
-        let playerYtop = playerY ;
-        let playerYbottom = playerY + 30; ////////////////////
+    method boolean hitbox(int obstacleX, int obstacleY) {
+        var int obstacleXleft;
+        var int obstacleXright;
+        var int obstacleYtop;
+        var int obstacleYbottom;
+        let obstacleXleft = obstacleX - 2;
+        let obstacleXright = obstacleX + 2;
+        let obstacleYtop = obstacleY;
+        let obstacleYbottom = obstacleY + 4;
 
-        if ((playerXleft < (x-1)) | (playerXleft = (x-1))) {
-          if (((x-1) < playerXright) | ((x-1) = playerXright)){
-            if ( playerYtop < y ) {
-              if ((y < playerYbottom) | (y = playerYbottom)){
-                do Output.moveCursor(18, 10);
-                do Output.printString("1");
+        if ((obstacleXleft < (x-1)) | (obstacleXleft = (x-1))) {
+          if (((x-1) < obstacleXright) | ((x-1) = obstacleXright)){
+            if ( obstacleYtop < y ) {
+              if ((y < obstacleYbottom) | (y = obstacleYbottom)){
+                do Output.moveCursor(18, 10);               
                 return 2;
               }
             }
-            if ( (playerYtop < (y+45)) | (playerYtop = (y+45)) ) {  
-              if (((y+45) < playerYbottom) | ((y+45) = playerYbottom)){
+            if ( (obstacleYtop < (y+45)) | (obstacleYtop = (y+45)) ) {  
+              if (((y+45) < obstacleYbottom) | ((y+45) = obstacleYbottom)){
                 do Output.moveCursor(18, 10);
-                do Output.printString("2");
-                return 2;
-              }
-            }
-          }
-        }
-
-
-        if ( (playerXleft < (x+2)) | (playerXleft = (x+2))) {  
-          if (((x+2) < playerXright) | ((x+2) = playerXright)){
-            if ( (playerYtop < y) | (playerYtop = y)) {
-              if ((y < playerYbottom) | (y = playerYbottom)){
-                do Output.moveCursor(18, 10);
-                do Output.printString("3");
-                return 2;
-              }
-            }
-            if ( (playerYtop < (y+45)) | (playerYtop = (y+45)) ) {  
-              if (((y+45) < playerYbottom) | ((y+45) < playerYbottom)){
-                do Output.moveCursor(18, 10);
-                do Output.printString("4"); 
                 return 2;
               }
             }
           }
         }
 
-        // hitbox para eje x
-        // if ( playerXleft < (x-1) ) {
-        //   if ((x-1) < playerXright){            
-        //     do Output.moveCursor(18, 10);
-        //     do Output.printString("1");
-        //     return 2;
-        //   }
-        // }
-        // if ( playerXleft < (x+2) ) {  
-        //   if ((x+2) < playerXright){
-        //     do Output.moveCursor(18, 10);
-        //     do Output.printString("2");
-        //     return 2;            
-        //   }
-        // }
 
-        // hitbox para eje y
-        // if ( playerYtop < y ) {
-        //   if (y < playerYbottom){
-        //     do Output.moveCursor(18, 10);
-        //     do Output.printString("1");
-        //     return 2;
-        //   }            
-        // }
-        // if ( playerYtop < (y+45) ) {  
-        //   if ((y+45) < playerYbottom){
-        //     do Output.moveCursor(18, 10);
-        //     do Output.printString("2");
-        //     return 2;
-        //   } 
-        // }
-
+        if ( (obstacleXleft < (x+2)) | (obstacleXleft = (x+2))) {  
+          if (((x+2) < obstacleXright) | ((x+2) = obstacleXright)){
+            if ( (obstacleYtop < y) | (obstacleYtop = y)) {
+              if ((y < obstacleYbottom) | (y = obstacleYbottom)){
+                do Output.moveCursor(18, 10);
+                return 2;
+              }
+            }
+            if ( (obstacleYtop < (y+45)) | (obstacleYtop = (y+45)) ) {  
+              if (((y+45) < obstacleYbottom) | ((y+45) < obstacleYbottom)){
+                do Output.moveCursor(18, 10);
+                return 2;
+              }
+            }
+          }
+        }
         return 1; // el jugador no está dentro del área del obstáculo
   }
     
@@ -166,7 +129,7 @@ class Obstacle{
     method void update(int carrilRandom){
         let stepAnimation=1;
         let draw= true;
-        let newCone = true;
+        let newHueco = true;
         let carril = carrilRandom;
         let x = 29;
         if(carril = 0){
@@ -226,35 +189,6 @@ class Obstacle{
         }
         do erase();
         do update(carril);
-        return;
-        // // Animación de salida
-        // if(x < 1){
-        //     do erase();
-        //     let x = x-1;
-        //     if(draw){//draw es un booleano = true
-        //         do draws();
-        //     }
-        //     if(~(draw)){ //Si es false
-        //         do deletes();
-        //     }
-        //     if(draw){
-        //         let stepAnimation= stepAnimation+1;
-        //     }
-        //     let draw = ~(draw);
-        // }
-    }
-
-    
-    method void draws(){
-        if (stepAnimation = 1) {
-            do Animacion_cono.cono1(x,y);
-        }
-        return; 
-    }
-    method void deletes(){
-        if (stepAnimation = 1) {
-            do Animacion_cono.deletecono1(x, y);
-        }
         return;
     }
 }
